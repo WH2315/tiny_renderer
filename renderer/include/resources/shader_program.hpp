@@ -17,7 +17,7 @@ public:
     void unbind() const;
 
 private:
-    void checkCompileErrors(uint32_t id);
+    void checkCompileErrors(uint32_t program);
 
 private:
     uint32_t id_;

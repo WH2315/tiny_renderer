@@ -72,4 +72,10 @@ void VertexArray::attachVertexBuffer(const std::shared_ptr<VertexBuffer>& VBO) {
     }
 }
 
+void VertexArray::attachIndexBuffer(const std::shared_ptr<IndexBuffer>& EBO) {
+    this->bind();
+    EBO->bind();
+    index_count_ = EBO->count_;
+}
+
 } // namespace wen

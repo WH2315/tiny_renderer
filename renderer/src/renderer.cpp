@@ -14,16 +14,20 @@ void Renderer::clear() const {
     glClear(GL_COLOR_BUFFER_BIT);
 }
 
-void Renderer::submit(const std::shared_ptr<ShaderProgram>& program,
-                      const std::shared_ptr<VertexArray>& VAO) const {
-    program->bind();
-    VAO->bind();
+void Renderer::bindShaderProgram(const std::shared_ptr<ShaderProgram>& shader_program) const {
+    shader_program->bind();
+}
+
+void Renderer::bindVertexArray(const std::shared_ptr<VertexArray>& vertex_array) const {
+    vertex_array->bind();
 }
 
 void Renderer::draw() const {
     glDrawArrays(GL_TRIANGLES, 0, 3);
 }
 
-void Renderer::drawIndexed() const {}
+void Renderer::drawIndexed(uint32_t count) const {
+    glDrawElements(GL_TRIANGLES, count, GL_UNSIGNED_INT, nullptr);
+}
 
 } // namespace wen

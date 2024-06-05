@@ -31,7 +31,7 @@ Shader::~Shader() {
     glDeleteShader(shader_);
 }
 
-void Shader::checkCompileErrors(unsigned int shader) {
+void Shader::checkCompileErrors(uint32_t shader) {
     int success;
     char infoLog[1024];
     glGetShaderiv(shader, GL_COMPILE_STATUS, &success);

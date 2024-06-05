@@ -26,4 +26,8 @@ std::shared_ptr<Renderer> Interface::createRenderer() {
     return std::make_shared<Renderer>();
 }
 
+std::shared_ptr<IndexBuffer> Interface::createIndexBuffer(uint32_t* indices, uint32_t count) {
+    return std::make_shared<IndexBuffer>(indices, count);
+}
+
 } // namespace wen

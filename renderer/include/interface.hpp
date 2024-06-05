@@ -4,6 +4,7 @@
 #include "resources/shader_program.hpp"
 #include "resources/vertex_array.hpp"
 #include "resources/vertex_buffer.hpp"
+#include "resources/index_buffer.hpp"
 #include "renderer.hpp"
 
 namespace wen {
@@ -17,6 +18,7 @@ public:
     std::shared_ptr<VertexArray> createVertexArray();
     std::shared_ptr<VertexBuffer> createVertexBuffer(float* vertices, uint32_t size);
     std::shared_ptr<Renderer> createRenderer();
+    std::shared_ptr<IndexBuffer> createIndexBuffer(uint32_t* indices, uint32_t count);
 
 private:
     std::string path_;

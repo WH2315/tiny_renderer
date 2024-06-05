@@ -30,12 +30,12 @@ void ShaderProgram::unbind() const {
     glUseProgram(0);
 }
 
-void ShaderProgram::checkCompileErrors(uint32_t id) {
+void ShaderProgram::checkCompileErrors(uint32_t program) {
     int success;
     char infoLog[1024];
-    glGetProgramiv(id, GL_LINK_STATUS, &success);
+    glGetProgramiv(program, GL_LINK_STATUS, &success);
     if (!success) {
-        glGetProgramInfoLog(id, 1024, nullptr, infoLog);
+        glGetProgramInfoLog(program, 1024, nullptr, infoLog);
         WEN_ERROR("Shader program compilation failed: {0}", infoLog);
     }
 }
