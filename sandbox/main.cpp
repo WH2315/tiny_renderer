@@ -9,9 +9,11 @@ int main() {
     auto vert = interface->createShader("vert.glsl", wen::ShaderStage::eVertex);
     auto frag = interface->createShader("frag.glsl", wen::ShaderStage::eFragment);
     auto program = interface->createShaderProgram(); 
+    float offset = 0.3f;
     program->attachShader(vert)
             .attachShader(frag)
-            .compile();
+            .compile()
+            .setFloat("xOffset", offset);
 
     float vertices[] = {
          0.5f,  0.5f, 0.0f, 1.0f, 0.0f, 0.0f,
