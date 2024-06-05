@@ -14,6 +14,10 @@ void Renderer::clear() const {
     glClear(GL_COLOR_BUFFER_BIT);
 }
 
+void Renderer::bindTexture2D(const std::shared_ptr<Texture2D>& texture, uint32_t slot) const {
+    texture->bind(slot);
+}
+
 void Renderer::bindShaderProgram(const std::shared_ptr<ShaderProgram>& shader_program) const {
     shader_program->bind();
 }
