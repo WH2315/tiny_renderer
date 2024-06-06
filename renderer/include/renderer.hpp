@@ -17,7 +17,7 @@ public:
     void bindTexture2D(const std::shared_ptr<Texture2D>& texture, uint32_t slot = 0) const;
     void bindShaderProgram(const std::shared_ptr<ShaderProgram>& shader_program) const;
     void bindVertexArray(const std::shared_ptr<VertexArray>& vertex_array) const;
-    void draw() const;
+    void draw(uint32_t vertex_count) const;
     void drawIndexed(uint32_t index_count) const;
 };
 
